@@ -6,6 +6,15 @@ import tkinter as tk
 def do_close():
     root.destroy()
 
+def popup_window():
+    window = tk.Toplevel()
+    window.geometry("280x300")
+    window.title("А/В результат")
+    
+    # Добавление кнопки закрытия окна
+    btnClosePopup = tk.Button(window, text="Закрыть", font = ('Helvetica', 10, 'bold'), command=window.destroy)
+    btnClosePopup.place(x=160, y=250, width=90, height=30)
+
 # Создание главного окна
 root = tk.Tk()
 root.geometry("280x300")
@@ -32,8 +41,6 @@ lblConversions1.place(x=25, y=115)
 entConversions1 = tk.Entry(font = ('Helvetica', 10, 'bold'))
 entConversions1.place(x=115, y=115, width=90, height=20)
 
-
-
 # Добавление метки заголовка тестовой группы
 lblTitle2 = tk.Label(text = "Тестовая группа", font = ('Helvetica', 12, 'bold'), fg = '#008800')
 lblTitle2.place(x=25, y=145)
@@ -51,12 +58,8 @@ lblConversions2.place(x=25, y=205)
 entConversions2 = tk.Entry(font = ('Helvetica', 10, 'bold'))
 entConversions2.place(x=115, y=205, width=90, height=20)
 
-
-
-
-
 # Дабавление кнопки "Рассчитать"
-btnProcess = tk.Button(root, text="Рассчитать", font = ('Helvetica', 10, 'bold'))
+btnProcess = tk.Button(root, text="Рассчитать", font = ('Helvetica', 10, 'bold'), command=popup_window)
 btnProcess.place(x=25, y=250, width=90, height=30)
 
 # Добавление кнопки закрытия программы
